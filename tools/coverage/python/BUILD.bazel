@@ -1,0 +1,15 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_library")
+
+py_library(
+    name = "coverage",
+    srcs = ["coverage.py"],
+    visibility = [
+        "//:__subpackages__",
+    ],
+    deps = [
+        requirement("coverage"),
+        requirement("coverage-lcov"),
+        requirement("toml"),
+    ],
+)

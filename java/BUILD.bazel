@@ -1,0 +1,18 @@
+load("@contrib_rules_jvm//java:defs.bzl", "java_junit5_test", "JUNIT5_DEPS")
+load("@rules_java//java:defs.bzl", "java_library")
+
+java_library(
+    name = "Lib",
+    srcs = ["src/main/foo/Lib.java"],
+)
+
+java_junit5_test(
+    name = "LibTest",
+    size = "small",
+    srcs = ["src/test/foo/LibTest.java"],
+    test_class = "foo.LibTest",
+    deps = [
+        ":Lib",
+        "@maven//:org_junit_jupiter_junit_jupiter_api",
+    ] + JUNIT5_DEPS,
+)

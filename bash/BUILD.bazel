@@ -1,0 +1,15 @@
+load("@bazel_bats//:rules.bzl", "bats_test")
+
+sh_library(
+    name = "lib",
+    srcs = ["lib.sh"],
+)
+
+bats_test(
+    name = "lib_test",
+    size = "small",
+    srcs = ["lib_test.bats"],
+    deps = [
+        ":lib",
+    ],
+)

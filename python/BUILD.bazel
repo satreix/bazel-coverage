@@ -1,0 +1,17 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_library")
+load("//tools/build/python:defs.bzl", "py_unittest")
+
+py_library(
+    name = "lib",
+    srcs = ["lib.py"],
+)
+
+py_unittest(
+    name = "lib_test",
+    size = "small",
+    deps = [
+        ":lib",
+        requirement("tabletest3"),
+    ],
+)

@@ -1,0 +1,2 @@
+coverage --instrument_test_targets
+coverage --combined_report=lcov

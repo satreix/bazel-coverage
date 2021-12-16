@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "lib",
+    srcs = ["lib.cc"],
+    hdrs = ["lib.h"],
+)
+
+cc_test(
+    name = "lib_test",
+    size = "small",
+    srcs = ["lib_test.cc"],
+    deps = [
+        ":lib",
+        "@gtest//:gtest_main",
+    ],
+)

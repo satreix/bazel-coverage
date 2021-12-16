@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[requires]
+python_version = "3.9"
+
+[packages]
+
+[dev-packages]
+coverage = "*"
+coverage-lcov = "*"
+tabletest3 = "*"
+toml = "*"
+xmlrunner = "*"
